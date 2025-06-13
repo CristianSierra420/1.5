@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cajero ATM Moderno</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href=".css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  
+
+</head>
+<body>
+  <header id="encabezado">Innova Bank</header>
+  <main class="contenedor-principal">
+
+    <!-- Sección de Registro -->
+    <section id="seccion-registro">
+      <h2>Registro</h2>
+      <form id="formulario-registro">
+        <label for="entrada-usuario">Nombre de usuario *</label>
+        <input type="text" id="entrada-usuario" class="form-control" required />
+
+        <label for="entrada-clave">Contraseña *</label>
+        <input type="password" id="entrada-clave" class="form-control" required />
+
+        <div id="mensaje-registro" class="mensaje"></div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+      <p>
+        ¿Ya tienes cuenta?
+        <button id="ir-a-ingreso" class="btn btn-link">Inicia sesión</button>
+      </p>
+    </section>
+
+    <!-- Sección de Ingreso -->
+    <section id="seccion-ingreso" class="hidden">
+      <h2>Ingreso</h2>
+      <form id="formulario-ingreso">
+        <label for="usuario-ingreso">Usuario</label>
+        <input type="text" id="usuario-ingreso" class="form-control" required />
+
+        <label for="clave-ingreso">Contraseña</label>
+        <input type="password" id="clave-ingreso" class="form-control" required />
+
+        <div id="mensaje-ingreso" class="mensaje"></div>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </form>
+      <p>
+        ¿No tienes cuenta?
+        <button id="ir-a-registro" class="btn btn-link">Regístrate aquí</button>
+      </p>
+    </section>
+
+    <!-- Sección Usuario -->
+    <section id="seccion-usuario" class="hidden">
+      <h2>Bienvenido, <span id="usuario-actual"></span></h2>
+
+ <div class="acciones-usuario">
+  <button id="boton-saldo" class="btn btn-primary">
+    <i class="fas fa-eye"></i> Ver saldo
+  </button>
+  <button id="boton-transferir" class="btn btn-primary">
+    <i class="fas fa-exchange-alt"></i> Transferir
+  </button>
+  <button id="boton-consignar" class="btn btn-primary">
+    <i class="fas fa-money-bill-wave"></i> Consignar
+  </button>
+  <button id="boton-retirar" class="btn btn-primary">
+    <i class="fas fa-hand-holding-usd"></i> Retirar
+  </button>
+  <button id="boton-movimientos" class="btn btn-secondary">
+    <i class="fas fa-receipt"></i> Movimientos
+  </button>
+  <button id="boton-tarjeta" class="btn btn-secondary">
+    <i class="fas fa-credit-card"></i> Mostrar tarjeta
+  </button>
+  <button id="boton-salir" class="btn btn-secondary">
+    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+  </button>
+</div>
+
+      <p id="saldo-visible" class="mensaje hidden"></p>
+      <div id="lista-movimientos" class="hidden"></div>
+
+      <div id="tarjeta-virtual" class="tarjeta hidden">
+        <div>
+          <span id="numero-tarjeta">0000 0000 0000 0000</span>
+          <button id="boton-ocultar" class="btn btn-link">Ocultar</button>
+        </div>
+        <div>
+          <span id="nombre-tarjeta">Nombre</span>
+          <span id="vencimiento-tarjeta">MM/AA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal personalizado -->
+    <div id="modal-fondo" class="modal">
+      <div class="modal-contenido">
+        <h3 id="modal-titulo">Título</h3>
+        <form id="modal-formulario">
+          <input id="modal-campo" type="text" class="form-control" />
+          <div id="modal-error" class="error"></div>
+          <div class="modal-botones">
+            <button type="button" id="modal-cancelar" class="btn btn-secondary">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+  <script src="banco.js"></script>
+</body>
+</html>

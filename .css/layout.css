@@ -1,0 +1,32 @@
+/* layout.css */
+#encabezado {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #2766c8;
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contenedor-principal {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 25px rgba(38, 99, 238, 0.2);
+  }
+  
+  .acciones-usuario {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  
